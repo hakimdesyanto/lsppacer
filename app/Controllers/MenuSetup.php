@@ -22,6 +22,8 @@ class MenuSetup extends BaseController
         } else {
             $validation = \Config\Services::validation();
         }
+        $menu = $this->generate_menu(session('user_type_id'));
+        // dd($menu);
         $data = [
             "title" => "Menu Setup",
             "breadcrumbs" => ['Setting', 'Menu Setup'],
@@ -29,9 +31,14 @@ class MenuSetup extends BaseController
             "no" => 0,
             "menu_setup" => $this->MenuSetupModel->tabel_menu_setup(),
             "menu_parents" => $this->MenuSetupModel->get_menu_parent(),
+            "menu_parents" => $this->MenuSetupModel->get_menu_parent(),
 
-            "pesan" => session()->getFlashdata('pesan')
+            "pesan" => session()->getFlashdata('pesan'),
+            "validation" => $validation,
+            "menu" => $menu
         ];
+
+
         return view('Setting/Menu_setup/main', $data);
     }
 
@@ -42,13 +49,15 @@ class MenuSetup extends BaseController
         } else {
             $validation = \Config\Services::validation();
         }
+        $menu = $this->generate_menu(session('user_type_id'));
         $data = [
             "title" => "Menu Setup",
             "breadcrumbs" => ['Setting', 'Menu Setup'],
             "icon" => "bx-user-circle",
             "menu_parents" => $this->MenuSetupModel->get_menu_parent(),
             "pesan" => session()->getFlashdata('pesan'),
-            "validation" => $validation
+            "validation" => $validation,
+            "menu" => $menu
         ];
         return view('Setting/Menu_setup/Add', $data);
     }
@@ -93,6 +102,7 @@ class MenuSetup extends BaseController
         $menu_setup = $this->MenuSetupModel->get_menu_setup($id);
         $menu_setup2 = $this->MenuSetupModel->get_menu_setup2($id);
         // dd($this->MenuSetupModel->get_menu_parent());
+        $menu = $this->generate_menu(session('user_type_id'));
         $data = [
             "title" => "User",
             "breadcrumbs" => ['Pengelolaan User', 'User'],
@@ -101,7 +111,8 @@ class MenuSetup extends BaseController
             "menu_parents" => $this->MenuSetupModel->get_menu_parent(),
             "pesan" => session()->getFlashdata('pesan'),
             "pesan2" => session()->getFlashdata('pesan2'),
-            "validation" => $validation
+            "validation" => $validation,
+            "menu" => $menu
         ];
         return view('Setting/Menu_setup/Edit', $data);
     }

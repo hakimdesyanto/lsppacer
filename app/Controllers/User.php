@@ -17,13 +17,15 @@ class User extends BaseController
     public function index()
     {
 
+        $menu = $this->generate_menu(session('user_type_id'));
         $data = [
             "title" => "User",
             "breadcrumbs" => ['Pengelolaan User', 'User'],
             "icon" => "bx-user-circle",
             "no" => 0,
             "user" => $this->UserModel->getUser(),
-            "pesan" => session()->getFlashdata('pesan')
+            "pesan" => session()->getFlashdata('pesan'),
+            "menu" => $menu
         ];
         return view('user/index', $data);
     }
@@ -211,15 +213,17 @@ class User extends BaseController
 
             return redirect()->to('/user/login')->withInput();
         } else {
-            if ($this->BaseModel->isgetdata("user", "email='" . $this->request->getVar('email') . "' AND user_password='" . md5($this->request->getVar('password')) . "'")) {
+            $email = $this->request->getVar('email');
+            $password = md5($this->request->getVar('password'));
+            if ($this->BaseModel->isgetdata("user", "email='" . $email . "' AND user_password='" . $password . "'")) {
                 $session = session();
-                $user_id = $this->BaseModel->getdata("user", "user_id", "email='" . $this->request->getVar('email') . "' AND user_password='" . md5($this->request->getVar('password')) . "'");
-                $user_name = $this->BaseModel->getdata("user", "user_name", "email='" . $this->request->getVar('email') . "' AND user_password='" . md5($this->request->getVar('password')) . "'");
+                $data_user = $this->BaseModel->get_data_user($email, $password);
+                $menu = $this->generate_menu($data_user['role_id']);
+                // dd($data_user['role_id'] . '- ' . $menu);
                 $session->set('logged', true);
-                $session->set('user_id', $user_id);
-                $session->set('user_type', 1);
-                $session->set('user_logged', $user_name);
-
+                $session->set('user_logged', $data_user['user_name']);
+                $session->set($data_user);
+                $session->set('menu', $menu);
                 return redirect()->to('/beranda');
             } else {
                 session()->setFlashdata('pesan', 'User atau password tidak ditemukan');

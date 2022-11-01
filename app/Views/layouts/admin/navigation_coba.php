@@ -20,7 +20,17 @@
             <div class="menu-title">Setting</div>
         </a>
         <ul>
-            <li> <a href="/MenuSetup/main"><i class="bx bx-right-arrow-alt"></i>Menu Setup</a> </li>
+            <li> <a href="/MenuSetup/main"><i class="bx bx-right-arrow-alt"></i>Menu Setup</a></li>
+            <li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon"><i class='bx bx-cart'></i></div>
+                    <div class="menu-title">User Setup</div>
+                </a>
+                <ul>
+                    <li> <a href="/MenuSetup/main"><i class="bx bx-right-arrow-alt"></i>User Setup 1</a></li>
+                    <li> <a href="/MenuSetup/main"><i class="bx bx-right-arrow-alt"></i>User Setup 2</a></li>
+                </ul>
+            </li>
             <li> <a href="/RoleSetup/main"><i class="bx bx-right-arrow-alt"></i>Role Setup</a></li>
         </ul>
     </li>

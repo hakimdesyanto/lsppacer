@@ -42,7 +42,7 @@
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<?= $this->include('layouts/admin/logo'); ?>
 			<!--navigation-->
-			<?= $this->include('layouts/admin/navigation'); ?>
+			<?= session('menu'); ?>
 			<!--end navigation-->
 		</div>
 		<!--end sidebar wrapper -->

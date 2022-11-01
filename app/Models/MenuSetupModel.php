@@ -99,19 +99,4 @@ class MenuSetupModel extends Model
         $builder->where('menu_id', $id);
         $builder->delete();
     }
-
-    public function get_province($id = '')
-    {
-        $sql = "select * from ref_province";
-        if ($id) {
-            $sql = $sql . " WHERE province_id=" . $id;
-        }
-        $builder = $this->db->query($sql);
-
-        if ($id) {
-            return $builder->getRowArray();
-        } else {
-            return $builder->getResultArray();
-        }
-    }
 }

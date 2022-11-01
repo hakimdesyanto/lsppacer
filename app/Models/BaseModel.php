@@ -46,6 +46,14 @@ class BaseModel extends Model
         }
     }
 
+    function get_data_user($email, $password)
+    {
+        $sql = "SELECT * FROM user where email=? and user_password=?";
+        $query = $this->db->query($sql, array($email, $password));
+
+        return $query->getRowArray();
+    }
+
     function getdata4selectoption($table, $fieldkey, $fields, $criteria = '', $selected = '', $insertempty = false)
     {
         $sql = "SELECT * FROM " . $table;
@@ -80,5 +88,22 @@ class BaseModel extends Model
         } else {
             return FALSE;
         }
+    }
+
+    public function get_menu($role_id, $menu_parent = 0)
+    {
+        //$role_id = session('role_id');
+        $sql = "SELECT lsp_menu.menu_id
+		,lsp_menu.menu_parent
+		,lsp_menu.menu_title
+		,lsp_menu.menu_url
+		,lsp_menu.menu_type
+		,lsp_menu.menu_icon_parent 
+		FROM lsp_menu
+		LEFT JOIN lsp_user_nav ON lsp_user_nav.menu_id = lsp_menu.menu_id
+		WHERE lsp_user_nav.role_id = ? AND lsp_menu.menu_parent = ? ORDER BY position ASC";
+        $query = $this->db->query($sql, array($role_id, $menu_parent));
+
+        return $query->getResultArray();
     }
 }

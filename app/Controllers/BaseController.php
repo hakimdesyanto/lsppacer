@@ -44,7 +44,10 @@ class BaseController extends Controller
      */
 
     protected $session;
-
+    public function __construct()
+    {
+        $this->BaseModel = new BaseModel();
+    }
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         // Do Not Edit This Line
@@ -104,7 +107,64 @@ class BaseController extends Controller
         return str_pad($num, $zerofill, '0', STR_PAD_LEFT);
     }
 
-    public function generate_menu()
+    public function generate_menu($role_id, $url = '')
     {
+        // dd($role_id);
+        $menu_parent = $this->BaseModel->get_menu($role_id, '0');
+        $html = '<ul class="metismenu" id="menu">';
+
+        for ($i = 0; $i < count($menu_parent); $i++) {
+            $sub_menu = $this->BaseModel->get_menu($role_id, $menu_parent[$i]['menu_id']);
+            $has_sub_menu = count($sub_menu);
+
+            if ($has_sub_menu == 0) {
+                if ($i == 0) {
+                    $html .= ' <li class="active"> ';
+                } else {
+                    $html .= ' <li> ';
+                }
+                $html .= '<a href="' . $menu_parent[$i]["menu_url"] . '">
+                    <div class="parent-icon"><i class="' . $menu_parent[$i]["menu_icon_parent"] . '"></i>
+                    </div>
+                    <div class="menu-title">' . $menu_parent[$i]['menu_title'] . '</div>
+                </a>
+            </li>';
+            } else {
+
+                $html .= '<li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon"><i class="' . $menu_parent[$i]["menu_icon_parent"] . '"></i></div>
+                    <div class="menu-title">' . $menu_parent[$i]["menu_title"] . '</div>
+                </a>';
+            }
+            /* BEGIN SUB MENU */
+            if ($has_sub_menu > 0) $html .= '<ul>';
+
+            for ($j = 0; $j < count($sub_menu); $j++) {
+                $sub_submenu = $this->BaseModel->get_menu($role_id, $sub_menu[$j]['menu_id']);
+                if (count($sub_submenu) == 0) {
+                    $html .= ' <li> <a href="' . $sub_menu[$j]["menu_url"] . '"><i class="bx bx-right-arrow-alt"></i>' . $sub_menu[$j]["menu_title"] . '</a></li>';
+                } else {
+                    $html .= '<li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class="' . $sub_menu[$j]["menu_icon_parent"] . '"></i></div>
+                        <div class="menu-title">' . $sub_menu[$j]["menu_title"] . '</div>
+                    </a>
+                    <ul>';
+                    for ($k = 0; $k < count($sub_submenu); $k++) {
+                        $html .= '<li> <a href="' . $sub_submenu[$k]["menu_title"] . '"><i class="bx bx-right-arrow-alt"></i>' . $sub_submenu[$k]["menu_title"] . '</a></li>';
+                    }
+                    $html .= '</ul>
+                    </li>';
+                }
+            }
+        }
+        $html .= '</ul>';
+        $html .= '</li>
+        </ul>';
+
+        return $html;
+
+        //dd($html);
     }
 }
