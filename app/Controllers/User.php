@@ -9,11 +9,13 @@ class User extends BaseController
 {
     protected $UserModel;
     protected $BaseModel;
+
     public function __construct()
     {
         $this->UserModel = new UserModel();
         $this->BaseModel = new BaseModel();
     }
+
     public function index()
     {
 

@@ -59,7 +59,7 @@ class FieldCode extends BaseController
             session()->setFlashdata('validation', $validation);
             session()->setFlashdata('pesan', 'Data gagal disimpan. Silahkan isi data dengan lengkap!');
 
-            return redirect()->to('/Master/Field_code/Add')->withInput();
+            return redirect()->to('/FieldCode/add')->withInput();
         } else {
 
             $data = [

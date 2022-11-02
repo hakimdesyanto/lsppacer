@@ -99,4 +99,16 @@ class MenuSetupModel extends Model
         $builder->where('menu_id', $id);
         $builder->delete();
     }
+
+    public function check_nomor_urut($menu_parent)
+    {
+        $sql = "select * from lsp_menu where menu_parent=? order by position desc limit 1";
+        $query = $this->db->query($sql, $menu_parent);
+        $row = $query->getRowArray();
+        if ($row == Null) {
+            return '0';
+        } else {
+            return $row['position'];
+        }
+    }
 }

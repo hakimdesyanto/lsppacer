@@ -16,6 +16,14 @@
 	<link href="<?= base_url() ?>/assets/admin/plugins/input-tags/css/tagsinput.css" rel="stylesheet" />
 	<link href="<?= base_url() ?>/assets/admin/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
 	<link href="<?= base_url() ?>/assets/admin/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+
+	<!-- dari inv -->
+	<link href="<?php echo base_url() ?>/assets/global/plugins/ui/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo base_url() ?>/assets/global/plugins/jqGrid/css/ui.jqgrid.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo base_url() ?>/assets/global/plugins/confirm/jquery-confirm.css" rel="stylesheet" type="text/css" />
+	<script src="<?php echo base_url() ?>/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+
 	<!-- untuk dashboard -->
 	<link href="<?= base_url() ?>/assets/admin/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 	<!-- untuk tables -->
@@ -42,7 +50,7 @@
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<?= $this->include('layouts/admin/logo'); ?>
 			<!--navigation-->
-			<?= session('menu'); ?>
+			<?= $menu ?>
 			<!--end navigation-->
 		</div>
 		<!--end sidebar wrapper -->
@@ -91,6 +99,18 @@
 	<!-- untuk tables -->
 	<script src="<?= base_url() ?>/assets/admin/plugins/datatable/js/jquery.dataTables.min.js"></script>
 	<script src="<?= base_url() ?>/assets/admin/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+
+	<!-- dari inv -->
+	<script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>/assets/global/plugins/jqGrid/js/i18n/grid.locale-en.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>/assets/global/plugins/jqGrid/js/jquery.jqGrid.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>/assets/global/plugins/ui/jquery-ui.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>/assets/global/plugins/chosen/chosen.jquery.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>/assets/global/plugins/confirm/jquery-confirm.js" type="text/javascript"></script>
+
 
 	<script>
 		$('html').attr('class', 'color-sidebar sidebarcolor3');

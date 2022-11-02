@@ -47,6 +47,8 @@
 </div>
 
 <script>
+    //  $(function() {
+    alert('halo');
     $("#select_all").livequery('click', function() {
         if ($(this).is(':checked') == true) {
             alert('Centang Semua');
@@ -56,6 +58,7 @@
             $("#menu-role input[type='checkbox']").prop('checked', false);
         }
     })
+    //  })
 </script>
 
 

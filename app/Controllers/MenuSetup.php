@@ -32,12 +32,10 @@ class MenuSetup extends BaseController
             "menu_setup" => $this->MenuSetupModel->tabel_menu_setup(),
             "menu_parents" => $this->MenuSetupModel->get_menu_parent(),
             "menu_parents" => $this->MenuSetupModel->get_menu_parent(),
-
             "pesan" => session()->getFlashdata('pesan'),
             "validation" => $validation,
             "menu" => $menu
         ];
-
 
         return view('Setting/Menu_setup/main', $data);
     }
@@ -77,12 +75,16 @@ class MenuSetup extends BaseController
 
                 return redirect()->to('/MenuSetup/add')->withInput();
             } else {
+                $menu_parent = $this->request->getVar('menu_parent');
+                $check = $this->MenuSetupModel->check_nomor_urut($menu_parent);
+
                 $data = [
                     "menu_parent" => $this->request->getVar('menu_parent'),
                     "menu_title" => $this->request->getVar('menu_title'),
                     "menu_url" => $this->request->getVar('menu_url'),
                     "menu_type" => $this->request->getVar('menu_type'),
-                    "menu_icon_parent" => $this->request->getVar('menu_icon_parent')
+                    "menu_icon_parent" => $this->request->getVar('menu_icon_parent'),
+                    "position" => $check + 1
                 ];
                 $id = $this->MenuSetupModel->insert_menu_setup($data);
                 session()->setFlashdata('pesan', 'Data berhasil disimpan');

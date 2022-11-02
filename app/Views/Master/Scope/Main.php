@@ -2,7 +2,7 @@
 <?= $this->section('content'); ?>
 <!-- <h6 class="mb-0 text-uppercase">MENU SETUP</h6> -->
 <hr />
-<a href="/FieldCode/add" class="btn btn-success btn-sm mb-3">Add Scope</a>
+<a href="/Scope/add" class="btn btn-success btn-sm mb-3">Add Scope</a>
 <?php if ($pesan != '') { ?>
     <div class="alert alert-success border-0 bg-success alert-dismissible fade show py-2">
         <div class="d-flex align-items-center">

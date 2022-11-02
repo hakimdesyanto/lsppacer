@@ -59,7 +59,7 @@ class Scope extends BaseController
             session()->setFlashdata('validation', $validation);
             session()->setFlashdata('pesan', 'Data gagal disimpan. Silahkan isi data dengan lengkap!');
 
-            return redirect()->to('/Master/Scope/Add')->withInput();
+            return redirect()->to('/Scope/add')->withInput();
         } else {
 
             $data = [

@@ -9,11 +9,13 @@ class CertificationType extends BaseController
 {
     protected $CertificationTypeModel;
     protected $BaseModel;
+
     public function __construct()
     {
         $this->CertificationTypeModel = new CertificationTypeModel();
         $this->BaseModel = new BaseModel();
     }
+
     public function main()
     {
 
@@ -57,7 +59,7 @@ class CertificationType extends BaseController
             session()->setFlashdata('validation', $validation);
             session()->setFlashdata('pesan', 'Data gagal disimpan. Silahkan isi data dengan lengkap!');
 
-            return redirect()->to('/Master/Certfitication_type/Add')->withInput();
+            return redirect()->to('/CertfiticationType/add')->withInput();
         } else {
 
             $data = [
@@ -101,7 +103,7 @@ class CertificationType extends BaseController
             session()->setFlashdata('validation', $validation);
             session()->setFlashdata('pesan2', 'Data gagal disimpan. Silahkan isi data dengan lengkap dan benar!');
 
-            return redirect()->to('/user/edit/' . $id)->withInput();
+            return redirect()->to('/CertificationType/edit/' . $id)->withInput();
         } else {
 
 
