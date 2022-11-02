@@ -101,7 +101,6 @@ class MenuSetup extends BaseController
 
         $menu_setup = $this->MenuSetupModel->get_menu_setup($id);
         $menu_setup2 = $this->MenuSetupModel->get_menu_setup2($id);
-        // dd($this->MenuSetupModel->get_menu_parent());
         $menu = $this->generate_menu(session('user_type_id'));
         $data = [
             "title" => "User",

@@ -105,6 +105,8 @@ class User extends BaseController
         $province = $this->UserModel->get_province($user['province_id']);
         $district = $this->UserModel->get_district($user['district_id']);
         $user_type = $this->UserModel->get_user_type($user['user_type_id']);
+        $menu = $this->generate_menu(session('user_type_id'));
+
         $data = [
             "title" => "User",
             "breadcrumbs" => ['Pengelolaan User', 'User'],
@@ -115,7 +117,8 @@ class User extends BaseController
             "user_type" => $this->BaseModel->getdata4selectoption('ref_user_type', 'user_type_id', array('user_type'), '', $user_type['user_type_id'], true),
             "pesan" => session()->getFlashdata('pesan'),
             "pesan2" => session()->getFlashdata('pesan2'),
-            "validation" => $validation
+            "validation" => $validation,
+            "menu" => $menu
         ];
         return view('user/edit', $data);
     }
@@ -218,12 +221,12 @@ class User extends BaseController
             if ($this->BaseModel->isgetdata("user", "email='" . $email . "' AND user_password='" . $password . "'")) {
                 $session = session();
                 $data_user = $this->BaseModel->get_data_user($email, $password);
-                $menu = $this->generate_menu($data_user['role_id']);
-                // dd($data_user['role_id'] . '- ' . $menu);
+                //$menu = $this->generate_menu($data_user['role_id']);
+                // dd($menu);
                 $session->set('logged', true);
                 $session->set('user_logged', $data_user['user_name']);
                 $session->set($data_user);
-                $session->set('menu', $menu);
+                // $session->set('menu', $menu);
                 return redirect()->to('/beranda');
             } else {
                 session()->setFlashdata('pesan', 'User atau password tidak ditemukan');

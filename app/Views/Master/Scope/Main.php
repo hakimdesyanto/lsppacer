@@ -2,7 +2,7 @@
 <?= $this->section('content'); ?>
 <!-- <h6 class="mb-0 text-uppercase">MENU SETUP</h6> -->
 <hr />
-<a href="/MenuSetup/add" class="btn btn-success btn-sm mb-3">Add Menu</a>
+<a href="/FieldCode/add" class="btn btn-success btn-sm mb-3">Add Scope</a>
 <?php if ($pesan != '') { ?>
     <div class="alert alert-success border-0 bg-success alert-dismissible fade show py-2">
         <div class="d-flex align-items-center">
@@ -19,7 +19,7 @@
 <div class="card">
     <div class="card-body">
         <div class="table-responsive">
-            <?= $this->include('Setting/Menu_setup/Tabel'); ?>
+            <?= $this->include('Master/Scope/Tabel'); ?>
 
         </div>
     </div>

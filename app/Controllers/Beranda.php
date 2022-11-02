@@ -6,7 +6,7 @@ class Beranda extends BaseController
 {
     public function index()
     {
-        //$menu = $this->generate_menu(session('user_type_id'));
+        $menu = $this->generate_menu(session('user_type_id'));
 
         $data = [
             "title" => "Dashboard",
@@ -15,8 +15,8 @@ class Beranda extends BaseController
             "total_pelamar" => $this->db->getaggregation("pelamar", "*", "1", "COUNT"),
             "total_diterima" => $this->db->getaggregation("pelamar", "*", "status='diterima'", "COUNT"),
             "total_lakilaki" => $this->db->getaggregation("pelamar", "*", "jenis_kelamin=1", "COUNT"),
-            "total_perempuan" => $this->db->getaggregation("pelamar", "*", "jenis_kelamin=0", "COUNT")
-            // ,"menu" => session('menu')
+            "total_perempuan" => $this->db->getaggregation("pelamar", "*", "jenis_kelamin=0", "COUNT"),
+            "menu" =>  $menu
         ];
         return view('beranda/index', $data);
     }

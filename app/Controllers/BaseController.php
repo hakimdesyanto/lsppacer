@@ -138,30 +138,33 @@ class BaseController extends Controller
                 </a>';
             }
             /* BEGIN SUB MENU */
-            if ($has_sub_menu > 0) $html .= '<ul>';
+            if ($has_sub_menu > 0) {
+                $html .= '<ul>';
 
-            for ($j = 0; $j < count($sub_menu); $j++) {
-                $sub_submenu = $this->BaseModel->get_menu($role_id, $sub_menu[$j]['menu_id']);
-                if (count($sub_submenu) == 0) {
-                    $html .= ' <li> <a href="' . $sub_menu[$j]["menu_url"] . '"><i class="bx bx-right-arrow-alt"></i>' . $sub_menu[$j]["menu_title"] . '</a></li>';
-                } else {
-                    $html .= '<li>
+                for ($j = 0; $j < count($sub_menu); $j++) {
+                    $sub_submenu = $this->BaseModel->get_menu($role_id, $sub_menu[$j]['menu_id']);
+                    if (count($sub_submenu) == 0) {
+                        $html .= ' <li> <a href="' . $sub_menu[$j]["menu_url"] . '"><i class="bx bx-right-arrow-alt"></i>' . $sub_menu[$j]["menu_title"] . '</a></li>';
+                    } else {
+                        $html .= '<li>
                     <a href="javascript:;" class="has-arrow">
                         <div class="parent-icon"><i class="' . $sub_menu[$j]["menu_icon_parent"] . '"></i></div>
                         <div class="menu-title">' . $sub_menu[$j]["menu_title"] . '</div>
                     </a>
                     <ul>';
-                    for ($k = 0; $k < count($sub_submenu); $k++) {
-                        $html .= '<li> <a href="' . $sub_submenu[$k]["menu_title"] . '"><i class="bx bx-right-arrow-alt"></i>' . $sub_submenu[$k]["menu_title"] . '</a></li>';
-                    }
-                    $html .= '</ul>
+                        for ($k = 0; $k < count($sub_submenu); $k++) {
+                            $html .= '<li> <a href="' . $sub_submenu[$k]["menu_title"] . '"><i class="bx bx-right-arrow-alt"></i>' . $sub_submenu[$k]["menu_title"] . '</a></li>';
+                        }
+                        $html .= '</ul>
                     </li>';
+                    }
                 }
+                $html .= '</ul>';
+                $html .= '</li>';
             }
         }
+
         $html .= '</ul>';
-        $html .= '</li>
-        </ul>';
 
         return $html;
 

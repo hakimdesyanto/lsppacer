@@ -1,4 +1,6 @@
-<div class="card border-top border-0 border-4 border-success" id="add" style="display:none">
+<?= $this->extend('layouts/Container.php'); ?>
+<?= $this->section('content'); ?>
+<div class="card border-top border-0 border-4 border-success">
     <div class="card-body">
         <div class="border p-4 rounded">
             <div class="card-title d-flex align-items-center">
@@ -81,3 +83,4 @@
         </div>
     </div>
 </div>
+<?= $this->endSection(); ?>
