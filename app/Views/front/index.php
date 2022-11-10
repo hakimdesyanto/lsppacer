@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Dinamika Inti Perkasa, PT.</title>
+    <title>Pacer PT</title>
     <link href="<?= base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= base_url(); ?>/assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?= base_url(); ?>/assets/css/prettyPhoto.css" rel="stylesheet">
@@ -39,11 +39,11 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#main-slider"><i class="icon-home"></i></a></li>
-                        <li><a href="#lowker">Lowongan Kerja</a></li>
+                        <li class="active"><a href="#main-slider"><i class="icon-home"></i> Home</a></li>
+                        <li><a href="#lowker">Curriculum</a></li>
                         <!-- <li><a href="#registrasi">Registrasi</a></li> -->
                         <li><a href="#pengumuman">Pengumuman</a></li>
-                        <li><a href="#about-us">Kontak Kami</a></li>
+                        <li><a href="#about-us">Our Contact</a></li>
                     </ul>
                     <div>
                         <a class="btn btn-primary" href="/user/login" style="margin-top:22px;margin-left: 30px;">Login</a>
@@ -59,8 +59,8 @@
             <div class="item active">
                 <div class="container">
                     <div class="carousel-content">
-                        <h1>Visiku</h1>
-                        <p class="lead">Mengambil bagian pembangunan dan pengembangan aset Bangsa Indonesia menuju bangsa yang memiliki SDM (Sumber Daya Manusia) dengan nilai produktifitas yang tinggi <i>(high productivity)</i> untuk mengisi <i>(support)</i> kebutuhan usaha <i>(business demand)</i> di dalam dan luar negeri di Era 5.0 <i>(Five point zero)</i></p>
+                        <h1>Vision</h1>
+                        <p class="lead">Become the best certitication provider in Indonesia</p>
                     </div>
                 </div>
             </div>
@@ -68,24 +68,19 @@
             <div class="item">
                 <div class="container">
                     <div class="carousel-content">
-                        <h1>Misi</h1>
-                        <p class="lead">1. Membangun kepercayaan pelaku bisnis lokal maupun internasional dengan standar kerja bermutu internasional</p>
+                        <h1>Mision</h1>
+                        <p class="lead">
+                            Provide the best service through the implementation of an information technology management system so that bring more benefits to all stakeholders
+                        </p>
                     </div>
                 </div>
             </div>
+            <!--/.item-->
             <div class="item">
                 <div class="container">
                     <div class="carousel-content">
-                        <h1>Misi</h1>
-                        <p class="lead">2. Menyajikan layanan jasa yang terbaik untuk <i>customer</i> yang kami sebut dengan istilah <i>“Duecustomer”</i></p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="container">
-                    <div class="carousel-content">
-                        <h1>Misi</h1>
-                        <p class="lead">3. Melahirkan model jenis usaha terbaik di bidangnya dan menjadi contoh untuk usaha sejenis di dalam negeri maupun <i>world wide</i></p>
+                        <h1>Motto</h1>
+                        <p class="lead">Professional, Active, Care, Efective, Reliable</p>
                     </div>
                 </div>
             </div>
@@ -103,14 +98,31 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="justify">
-                            <p class="lead">LSP PACER didirikan di Depok pada tahun 2022. Bergerak di bidang sertifikasi auditor yang terdiri dari : Building Services, Security Services, Maintenance, Personnel Service Providers, Mechanics dan Electrical. PT. Dinamika Inti Perkasa hadir untuk memberikan solusi SDM dalam berbagai hal untuk memenuhi kebutuhan SDM bagi perusahaan besar maupun berkembang.</p>
-                            <p class="lead">Berawal dari desakan masyarakat dan semakin banyaknya jumlah pengangguran yang ada di daerah-daerah sekitar maka dengan niat untuk membantu masyarakat dalam mencari pekerjaan, akhirnya didirikanlah perusahaan. Perusahaan dikelola oleh tenaga-tenaga yang telah berpengalaman dibidang rekrutmen dan outsourcing. </p>
-                            <p class="lead"><strong>Visi</strong></p>
-                            <p class="lead">Mengambil bagian pembangunan dan pengembangan aset Bangsa Indonesia menuju bangsa yang memiliki SDM (Sumber Daya Manusia) dengan nilai produktifitas yang tinggi <i>(high productivity)</i> untuk mengisi <i>(support)</i> kebutuhan usaha <i>(business demand)</i> di dalam dan luar negeri di Era 5.0 <i>(Five point zero)</i></p>
-                            <p class="lead"><strong>Misi</strong></p>
-                            <p class="lead">1. Membangun kepercayaan pelaku bisnis lokal maupun internasional dengan standar kerja bermutu internasional</p>
-                            <p class="lead">2. Menyajikan layanan jasa yang terbaik untuk <i>customer</i> yang kami sebut dengan istilah <i>“Duecustomer”</i></p>
-                            <p class="lead">3. Melahirkan model jenis usaha terbaik di bidangnya dan menjadi contoh untuk usaha sejenis di dalam negeri maupun <i>world wide</i></p>
+                            <p class="lead" style="text-align: justify">
+
+                            <p class="lead" style="text-align: justify">I. BACKGROUND</p>
+                            <p class="lead" style="text-align: justify">PT. Professional Career Certification (PACER) was established with a concern for the professional certification of management system auditors. The ISO 9001 Management System Auditor who was previously certified by SP PUSTAN LIPI is currently no longer able to continue his registration since 2018 because SP PUSTAN LIPI is no longer operating actively. </p>
+                            <p class="lead" style="text-align: justify">Based on this, the personnel who have been involved in the management of SP PUSTAN LIPI took the initiative to reactivate the certification body for the management system auditor with a wider range of services.</p>
+                            <p class="lead" style="text-align: justify">LSP PACER is expected to be a forum for professionals to improve their professionalism with an accreditation system based on ISO/IEC 17024. In addition to the Management System Auditor profession, LSP PACER is also gradually developing the scope of certification for other professions. </p>
+                            <p class="lead" style="text-align: justify">The Competency Standards of the Management System Auditor at LSP PACER are set out in the Certification Scheme established by the Scheme and Impartiality Committee. Members of the Scheme and Impartiality Committee come from interested parties such as from the Government, Private or Industry, Academics, Practitioners, Certification Bodies, and Training Institutes. This management system auditor certification scheme refers to laws and regulations, Indonesian National Standards, especially SNI ISO 19011, best practice related to auditor competence and other sources that have been reviewed and determined by the Scheme and Impartiality Committee.</p>
+                            <p class="lead" style="text-align: justify">II. AUDITOR LEVEL</p>
+                            <p class="lead" style="text-align: justify">
+                                The Management System Auditor Level applied at LSP PACER is<br>
+                                a. Level 1 : Provisional Auditor<br>
+                                b. Level 2 : Auditor<br>
+                                c. Level 3 : Lead Auditor<br>
+                                d. Level 4: Business Improvement Auditor / Main Auditor<br>
+                            </p>
+                            <p class="lead" style="text-align: justify">
+                                III. SCOPE OF MANAGEMENT SYSTEM AUDITORS</p>
+                            <p class="lead" style="text-align: justify">
+                                The scope of the Management System Auditor certified at LSP PACER is : <br>
+                                1. Based SNI ISO 9001 - Quality Management System Auditor<br>
+                                2. Based SNI ISO 14001 - Environmental Management System Auditor<br>
+                                3. Based SNI ISO 22000 - Food Safety Management System Auditor<br>
+                                4. Based SNI ISO 45001 - Work Safety Management System Auditor<br>
+                                5. Based SNI ISO 27001 - Information System Security Management System Auditor
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -126,7 +138,7 @@
         <div class="container">
             <div class="box">
                 <div class="center gap">
-                    <h2>Lowongan Pekerjaan</h2>
+                    <h2>Curriculum</h2>
                     <br />
                     <?php
                     $klien = '';
@@ -152,156 +164,6 @@
         <!--/.container-->
     </section>
     <!--/#portfolio-->
-
-    <section id="registrasi">
-        <!-- <div class="container">
-            <div class="box">
-                <div class="center">
-                    <h2>Registrasi</h2>
-                </div>
-                <?php if ($pesan != '') { ?>
-                    <div class="alert alert-<?php echo session()->getFlashdata('alert'); ?> alert-dismissible" role="alert" style="text-align: center;"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <p class="lead" style="color:<?php echo (session()->getFlashdata('alert') == 'danger') ? 'red' : 'green'; ?>;"><?= $pesan; ?></p>
-                    </div>
-                <?php } ?>
-                
-                <div id="reg" class="row">
-                    <div class="col-sm-12">
-                        <form action="/front/register" method="post" autocomplete="off">
-                            <?php csrf_field(); ?>
-                            <div class="row">
-                                <label class="col-sm-2 control-label  text-danger">No. Pendaftaran*</label>
-                                <div class="col-sm-3">
-                                    <input type="text" name="gnodaftar" id="gnodaftar" class="form-control" value="<?php echo $noregistrasi; ?>" readonly>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label  text-danger">Nama Lengkap*</label>
-                                <div class="col-sm-3">
-                                    <input type="text" name="gnama" id="gnama" class="form-control" value="<?= old('gnama'); ?>">
-                                    <div class="invalid-feedback"><?= $validation->getError('gnama'); ?></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label">Alamat</label>
-                                <div class="col-sm-3">
-                                    <textarea name="galamat" id="galamat" class="form-control"><?= old('galamat'); ?></textarea>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label  text-danger">No. Telp*</label>
-                                <div class="col-sm-3">
-                                    <input type="text" name="gnotelp" id="gnotelp" class="form-control" value="<?= old('gnotelp'); ?>">
-                                    <div class="invalid-feedback"><?= $validation->getError('gnotelp'); ?></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label  text-danger">No. KTP*</label>
-                                <div class="col-sm-3">
-                                    <input type="text" name="gnoktp" id="gnoktp" class="form-control" value="<?= old('gnoktp'); ?>">
-                                    <div class="invalid-feedback"><?= $validation->getError('gnoktp'); ?></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label">Email</label>
-                                <div class="col-sm-3">
-                                    <input type="text" name="gemail" id="gemail" class="form-control" value="<?= old('gemail'); ?>">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label">Jenis Kelamin</label>
-                                <div class="col-sm-1">
-                                    <input type="radio" name="gjeniskelamin" id="gjeniskelamin1" value="1" <?= (old('gjeniskelamin') == 1) ? 'checked' : ''; ?>> Pria
-                                </div>
-                                <div class="col-sm-1">
-                                    <input type="radio" name="gjeniskelamin" id="gjeniskelamin1" value="0" <?= (old('gjeniskelamin') == 0) ? 'checked' : ''; ?>> Wanita
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label">Status Kawin</label>
-                                <div class="col-sm-3">
-                                    <select name="gstatuskawin" id="gstatuskawin" class="select2 form-control" data-placeholder="Pilih Posisi">
-                                        <?= $statuskawin; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label">Pendidikan</label>
-                                <div class="col-sm-3">
-                                    <select name="gpendidikan" id="gpendidikan" class="select2 form-control" data-placeholder="Pilih Posisi">
-                                        <?= $pendidikan; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label">Jurusan</label>
-                                <div class="col-sm-3">
-                                    <input type="text" name="gjurusan" id="gjurusan" class="form-control" value="<?= old('gjurusan'); ?>">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label">Universitas</label>
-                                <div class="col-sm-3">
-                                    <input type="text" name="guniversitas" id="guniversitas" class="form-control" value="<?= old('guniversitas'); ?>">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label">Pengalaman</label>
-                                <div class="col-sm-3">
-                                    <textarea name="gpengalaman" id="gpengalaman" class="form-control"><?= old('gpengalaman'); ?></textarea>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label  text-danger">Posisi*</label>
-                                <div class="col-sm-3">
-                                    <select name="gposisi" id="gposisi" class="select2 form-control" data-placeholder="Pilih Posisi">
-                                        <?= $posisi; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label">Tempat Lahir</label>
-                                <div class="col-sm-3">
-                                    <input type="text" name="gtmplahir" id="gtmplahir" class="form-control" value="<?= old('gtmplahir'); ?>">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label">Tgl Lahir</label>
-                                <div class="col-sm-2">
-                                    <div id="date-popup" class="input-group date" data-provide="datepicker">
-                                        <input name="gtgllahir" id="gtgllahir" type="text" data-format="dd MM yyyy" class="form-control" value="<?= old('gtgllahir'); ?>" placeholder="yyyy-mm-dd" style="width: 101px">
-                                        <span class="input-group-addon" style="visibility: hidden"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label  text-danger">User*</label>
-                                <div class="col-sm-3">
-                                    <input type="text" name="guser" id="guser" class="form-control" value="<?= old('guser'); ?>">
-                                    <div class="invalid-feedback"><?= $validation->getError('guser'); ?></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label  text-danger">Password*</label>
-                                <div class="col-sm-3">
-                                    <input type="password" name="gpassword" id="gpassword" class="form-control" value="">
-                                    <div class="invalid-feedback"><?= $validation->getError('gpassword'); ?></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-sm-2 control-label  text-danger">Konfirm Password*</label>
-                                <div class="col-sm-3">
-                                    <input type="password" name="gkpassword" id="gkpassword" class="form-control" value="">
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-success">Submit</button>
-                        </form>
-                    </div>
-                    
-                </div>
-            </div>
-        </div> -->
-    </section>
 
     <section id="pengumuman">
         <div class="container">
@@ -356,15 +218,16 @@
             <div class="box last">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h1>Kontak Kami</h1>
+                        <h1>Our Contact</h1>
                         <div class="row">
                             <div class="col-md-6">
                                 <address>
                                     <strong>Head Office</strong><br>
-                                    Jl. Kartini Raya No. 47 B<br>
-                                    Pancoran Mas - Depok<br>
-                                    Phone: (021) 2909-7507<br>
-                                    Website: <a href="https://jasaoutsourcing.co.id/" target="_blank">www.jasaoutsourcing.co.id</a>
+                                    Jl. Gereja No. 9 RT 01/RW 08, Paledang<br>
+                                    Kecamatan Bogor Tengah, Kota Bogor<br>
+                                    Jawa Barat 16122<br>
+                                    Phone: 0251 8340450<br>
+                                    Website: <a href="https://menarasains.com/" target="_blank">menarasains.com</a>
                                 </address>
                             </div>
                         </div>
@@ -400,7 +263,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; <?= date('Y') ?> Dinamika Inti Perkasa, PT. All Rights Reserved.
+                    &copy; <?= date('Y') ?> LSP PACER, PT. All Rights Reserved.
                 </div>
             </div>
         </div>

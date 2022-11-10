@@ -47,18 +47,21 @@
 </div>
 
 <script>
-    //  $(function() {
-    alert('halo');
-    $("#select_all").livequery('click', function() {
-        if ($(this).is(':checked') == true) {
-            alert('Centang Semua');
-            $("#menu-role input[type='checkbox']").prop('checked', true);
-        } else {
-            alert('Un Centang Semua');
-            $("#menu-role input[type='checkbox']").prop('checked', false);
-        }
+    // alert('halo');
+    //$("#select_all").livequery('click', function() {
+    $("#select_all").click(function() {
+        $("#menu-role input type='checkbox'").each(function() {
+            this.checked = true;
+        });
+
+        // if ($(this).is(':checked') == true) {
+        //     //  alert('Centang Semua');
+        //     $("#menu-role input[type='checkbox']").prop('checked', true);
+        // } else {
+        //     //alert('Un Centang Semua');
+        //     $("#menu-role input[type='checkbox']").prop('checked', false);
+        // }
     })
-    //  })
 </script>
 
 

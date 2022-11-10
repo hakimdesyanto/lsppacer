@@ -6,10 +6,12 @@
             <div class="top-menu ms-auto">
 
             </div>
+
             <div class="user-box dropdown">
                 <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="<?= base_url() ?>/assets/admin/images/avatars/man.png" class="user-img" alt="user avatar">
                     <div class="user-info ps-3">
+
                         <p class="user-name mb-0"><?= ucfirst(session()->get('user_logged')); ?></p>
                         <!-- <p class="designattion mb-0">Administrator</p> -->
                     </div>

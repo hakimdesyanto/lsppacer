@@ -46,14 +46,6 @@ class BaseModel extends Model
         }
     }
 
-    function get_data_user($email, $password)
-    {
-        $sql = "SELECT * FROM user where email=? and user_password=?";
-        $query = $this->db->query($sql, array($email, $password));
-
-        return $query->getRowArray();
-    }
-
     function getdata4selectoption($table, $fieldkey, $fields, $criteria = '', $selected = '', $insertempty = false)
     {
         $sql = "SELECT * FROM " . $table;
@@ -88,6 +80,69 @@ class BaseModel extends Model
         } else {
             return FALSE;
         }
+    }
+
+    function getdata4multiselectoption($table, $fieldkey, $fields, $criteria = '', $selected = array(), $insertempty = false)
+    {
+        $sql = "SELECT * FROM " . $table;
+        if ($criteria != '') {
+            $sql = $sql . " WHERE " . $criteria;
+        }
+        $rows = $this->db->query($sql)->getResultArray();
+        if ($rows) {
+            $option = '';
+            if ($insertempty) {
+                $option = '<option value="">Please Select</option>';
+            }
+            foreach ($rows as $record) {
+                $option = $option . '<option value="' . $record[$fieldkey] . '" ';
+                foreach ($selected as $select) {
+                    if ($select == htmlentities($record[$fieldkey], ENT_QUOTES)) {
+                        $option = $option . ' selected ';
+                    }
+                }
+
+                $option = $option . '>';
+
+                $first = true;
+                foreach ($fields as $field) {
+                    if ($first) {
+                        $first = false;
+                    } else {
+                        $option = $option . " | ";
+                    }
+                    $option = $option . $record[$field];
+                }
+                $option = $option . '</option>';
+            }
+            return $option;
+        } else {
+            return FALSE;
+        }
+    }
+
+    function getdatatoarray($table, $field, $criteria)
+    {
+        $sql = "SELECT * FROM " . $table . " WHERE " . $criteria;
+        $row = $this->db->query($sql)->getResultArray();
+        if ($row) {
+            $result = array();
+            foreach ($row as $value) {
+                array_push($result, $value[$field]);
+            }
+
+            return $result;
+        } else {
+            return array();
+        }
+    }
+
+    function get_data_user($email, $password)
+    {
+        $sql = "SELECT * FROM user where email=? and user_password=?";
+        $query = $this->db->query($sql, array($email, $password));
+
+        return $query->getRowArray();
     }
 
     public function get_menu($role_id, $menu_parent = 0)

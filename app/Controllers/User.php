@@ -39,6 +39,7 @@ class User extends BaseController
         } else {
             $validation = \Config\Services::validation();
         }
+        $menu = $this->generate_menu(session('user_type_id'));
         $data = [
             "title" => "User",
             "breadcrumbs" => ['Pengelolaan User', 'User'],
@@ -47,7 +48,8 @@ class User extends BaseController
             "district" => $this->BaseModel->getdata4selectoption('ref_district', 'district_id', array('district_name'), '', '', true),
             "user_type" => $this->BaseModel->getdata4selectoption('ref_user_type', 'user_type_id', array('user_type'), '', '', true),
             "pesan" => session()->getFlashdata('pesan'),
-            "validation" => $validation
+            "validation" => $validation,
+            "menu" => $menu
         ];
         return view('user/create', $data);
     }
