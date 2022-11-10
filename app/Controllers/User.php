@@ -70,6 +70,7 @@ class User extends BaseController
                 return redirect()->to('/user/create')->withInput();
             } else {
                 $data = [
+                    "user_id" => $this->get_uuid(),
                     "full_name" => $this->request->getVar('full_name'),
                     "birth_place" => $this->request->getVar('birth_place'),
                     "birth_date" => $this->request->getVar('birth_date'),

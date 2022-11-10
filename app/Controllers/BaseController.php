@@ -7,6 +7,7 @@ use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use Ramsey\Uuid\Uuid;
 use Psr\Log\LoggerInterface;
 use App\Models\BaseModel;
 
@@ -169,5 +170,10 @@ class BaseController extends Controller
         return $html;
 
         //dd($html);
+    }
+
+    public function get_uuid()
+    {
+        return str_replace("-", "", uuid::uuid4());
     }
 }

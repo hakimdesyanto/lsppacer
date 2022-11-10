@@ -52,6 +52,35 @@ class CertificationModel extends Model
         return $query->getResultArray();
     }
 
+    public function get_education($id)
+    {
+        $sql = "select * from education where certification_id=?";
+        $query = $this->db->query($sql, $id);
+        return $query->getRowArray();
+    }
+
+    public function get_experience($id)
+    {
+        $sql = "select * from experience where certification_id=?";
+        $query = $this->db->query($sql, $id);
+        return $query->getRowArray();
+    }
+
+    public function get_audit_experience($id)
+    {
+        $sql = "select * from audit_experience where certification_id=?";
+        $query = $this->db->query($sql, $id);
+        return $query->getRowArray();
+    }
+
+    public function get_training($id)
+    {
+        $sql = "select * from training where certification_id=?";
+        $query = $this->db->query($sql, $id);
+        return $query->getRowArray();
+    }
+
+
 
 
     public function insert_certification($data)
@@ -144,10 +173,10 @@ class CertificationModel extends Model
         }
     }
 
-    public function get_audit_experience_id()
+    public function get_audit_experience_id($id)
     {
-        $sql = "select * from audit_experience order by audit_experience_id desc limit 1";
-        $query = $this->db->query($sql);
+        $sql = "select * from audit_experience where certification_id=?";
+        $query = $this->db->query($sql, $id);
         $row = $query->getRowArray();
         return $row['audit_experience_id'];
     }
@@ -164,5 +193,55 @@ class CertificationModel extends Model
         $builder = $this->db->table('certificationd_fieldcode');
         $builder->where('certification_id', $id);
         $builder->delete();
+    }
+
+    public function delete_education($id)
+    {
+        $builder = $this->db->table('education');
+        $builder->where('certification_id', $id);
+        $builder->delete();
+    }
+
+    public function delete_experience($id)
+    {
+        $builder = $this->db->table('experience');
+        $builder->where('certification_id', $id);
+        $builder->delete();
+    }
+
+    public function delete_audit_experience($id)
+    {
+        $builder = $this->db->table('audit_experience');
+        $builder->where('certification_id', $id);
+        $builder->delete();
+    }
+
+    public function delete_audit_experienced_role($id)
+    {
+        $builder = $this->db->table('audit_experienced_role');
+        $builder->where('audit_experience_id', $id);
+        $builder->delete();
+    }
+
+    public function delete_audit_experienced_scope($id)
+    {
+        $builder = $this->db->table('audit_experienced_scope');
+        $builder->where('audit_experience_id', $id);
+        $builder->delete();
+    }
+
+    public function delete_training($id)
+    {
+        $builder = $this->db->table('training');
+        $builder->where('certification_id', $id);
+        $builder->delete();
+    }
+
+    public function get_role_id($id)
+    {
+        $sql = "select * from audit_experienced_role where audit_experience_id=?";
+        $query = $this->db->query($sql, $id);
+        $row = $query->getRowArray();
+        return $row['role_id'];
     }
 }
