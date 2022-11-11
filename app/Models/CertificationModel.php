@@ -173,69 +173,6 @@ class CertificationModel extends Model
         }
     }
 
-    public function get_audit_experience_id($id)
-    {
-        $sql = "select * from audit_experience where certification_id=?";
-        $query = $this->db->query($sql, $id);
-        $row = $query->getRowArray();
-        return $row['audit_experience_id'];
-    }
-
-    public function delete_certificationd_scope($id)
-    {
-        $builder = $this->db->table('certificationd_scope');
-        $builder->where('certification_id', $id);
-        $builder->delete();
-    }
-
-    public function delete_certificationd_fieldcode($id)
-    {
-        $builder = $this->db->table('certificationd_fieldcode');
-        $builder->where('certification_id', $id);
-        $builder->delete();
-    }
-
-    public function delete_education($id)
-    {
-        $builder = $this->db->table('education');
-        $builder->where('certification_id', $id);
-        $builder->delete();
-    }
-
-    public function delete_experience($id)
-    {
-        $builder = $this->db->table('experience');
-        $builder->where('certification_id', $id);
-        $builder->delete();
-    }
-
-    public function delete_audit_experience($id)
-    {
-        $builder = $this->db->table('audit_experience');
-        $builder->where('certification_id', $id);
-        $builder->delete();
-    }
-
-    public function delete_audit_experienced_role($id)
-    {
-        $builder = $this->db->table('audit_experienced_role');
-        $builder->where('audit_experience_id', $id);
-        $builder->delete();
-    }
-
-    public function delete_audit_experienced_scope($id)
-    {
-        $builder = $this->db->table('audit_experienced_scope');
-        $builder->where('audit_experience_id', $id);
-        $builder->delete();
-    }
-
-    public function delete_training($id)
-    {
-        $builder = $this->db->table('training');
-        $builder->where('certification_id', $id);
-        $builder->delete();
-    }
 
     public function get_role_id($id)
     {

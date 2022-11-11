@@ -342,8 +342,6 @@ class Certification extends BaseController
             $this->CertificationModel->update_certification($certification_id, $data);
 
             /** insert into certificationd_scope */
-            $this->CertificationModel->delete_certificationd_scope($certification_id);
-
             $scope_id = $this->request->getVar('scope_id');
             $scope_detail = count($scope_id);
             // $certification_id = $id;
@@ -357,8 +355,6 @@ class Certification extends BaseController
             }
 
             /** insert into certificationd_fieldcode */
-            $this->CertificationModel->delete_certificationd_fieldcode($certification_id);
-
             $fieldcode_id = $this->request->getVar('fieldcode_id');
             $fc_detail = count($fieldcode_id);
 
@@ -372,8 +368,6 @@ class Certification extends BaseController
             }
 
             /** insert into education */
-            $this->CertificationModel->delete_education($certification_id);
-
             $user_id = session('user_id');
             $folder = $_SERVER["DOCUMENT_ROOT"] . '/assets/Education/Doc_path/' . $user_id;
             $date = date('YmdHis');
@@ -411,8 +405,6 @@ class Certification extends BaseController
             $id = $this->CertificationModel->insert_certification_education($data);
 
             /** insert into experience */
-            $this->CertificationModel->delete_experience($certification_id);
-
             $folder = $_SERVER["DOCUMENT_ROOT"] . '/assets/Experience/Doc_path/' . $user_id;
             $date = date('YmdHis');
             $folderName = $folder . '/' . $date . ' ' . basename($_FILES['doc_path_experience']['name']);
@@ -442,8 +434,6 @@ class Certification extends BaseController
             $id = $this->CertificationModel->insert_certification_experience($data);
 
             /** insert into audit experience */
-            $this->CertificationModel->delete_audit_experience($certification_id);
-
             $folder = $_SERVER["DOCUMENT_ROOT"] . '/assets/Audit_Experience/Doc_path/' . $user_id;
             $date = date('YmdHis');
             $folderName = $folder . '/' . $date . ' ' . basename($_FILES['doc_audit_plan_path']['name']);
@@ -490,8 +480,6 @@ class Certification extends BaseController
             $id = $this->CertificationModel->insert_certification_audit_experience($data);
 
             /** insert into audit_experienced_role */
-            $this->CertificationModel->delete_audit_experienced_role($audit_experience_id);
-
             $role_id = $this->request->getVar('role_id');
             $role_detail = count($role_id);
 
@@ -504,8 +492,6 @@ class Certification extends BaseController
             }
 
             /** insert into audit_experienced_scope */
-            $this->CertificationModel->delete_audit_experienced_scope($audit_experience_id);
-
             $scope_id = $this->request->getVar('scope_id');
             $scope_detail = count($scope_id);
 
@@ -520,8 +506,6 @@ class Certification extends BaseController
             }
 
             /** insert into training */
-            $this->CertificationModel->delete_training($certification_id);
-
             $folder = $_SERVER["DOCUMENT_ROOT"] . '/assets/Training/Doc_path/' . $user_id;
             $date = date('YmdHis');
             $folderName = $folder . '/' . $date . ' ' . basename($_FILES['doc_path_training']['name']);
@@ -557,23 +541,7 @@ class Certification extends BaseController
 
     public function delete($certification_id)
     {
-
         $this->CertificationModel->delete_certification($certification_id);
-        $this->CertificationModel->delete_certificationd_scope($certification_id);
-        $this->CertificationModel->delete_certificationd_fieldcode($certification_id);
-
-        $this->CertificationModel->delete_education($certification_id);
-
-        $this->CertificationModel->delete_experience($certification_id);
-
-        $this->CertificationModel->delete_audit_experience($certification_id);
-
-        $audit_experience_id = $this->CertificationModel->get_audit_experience_id($certification_id);
-        $this->CertificationModel->delete_audit_experienced_role($audit_experience_id);
-        $this->CertificationModel->delete_audit_experienced_scope($audit_experience_id);
-
-        $this->CertificationModel->delete_training($certification_id);
-
         return redirect()->to('/Certification/main')->with('pesan', 'Data berhasil dihapus');
     }
 
